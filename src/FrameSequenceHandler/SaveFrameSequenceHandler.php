@@ -40,7 +40,7 @@ class SaveFrameSequenceHandler implements FrameSequenceHandler
         if ($this->path) {
             $gif->writeImages($this->path, true);
         } else {
-            echo $gif->getImageBlob();
+            echo $gif->getImagesBlob();
         }
 
         $gif->clear();
