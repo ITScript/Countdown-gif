@@ -20,7 +20,7 @@ class InjectVariableFrameMiddlewareTest extends TestCase
     {
         $middleware = new InjectVariableFrameMiddleware($substitutionGenerator);
 
-        $this->assertAttributeInternalType('callable', 'substitutionGenerator', $middleware);
+        $this->assertAttributeNotEmpty('substitutionGenerator', $middleware);
     }
 
     /**
