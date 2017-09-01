@@ -3,6 +3,7 @@
     "type": "library",
     "description": "Countdown gif generator",
     "license": "MIT",
+    "keywords": ["countdown", "gif", "svg"],
     "authors": [
         {
             "name": "Alexander Vysotsky",
