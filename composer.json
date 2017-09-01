@@ -1,5 +1,5 @@
 {
-    "name": "its/countdown-gif",
+    "name": "itscript/countdown-gif",
     "type": "library",
     "description": "Countdown gif generator",
     "license": "MIT",
