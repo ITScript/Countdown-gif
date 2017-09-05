@@ -5,5 +5,13 @@ php:
   - '7.0'
   - '7.1'
 
+before_install:
+    - sudo add-apt-repository -y ppa:moti-p/cc
+    - sudo apt-get update
+    - sudo apt-get -y --reinstall install ghostscript
+    - sudo apt-get -y --reinstall install gs-esp
+    - sudo apt-get -y --reinstall install imagemagick
+    - printf "\n" | pecl install imagick-beta
+
 install:
   - composer require --dev
