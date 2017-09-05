@@ -4,6 +4,6 @@ php:
   - '7.0'
   - '7.1'
 before_script:
-  - pecl install imagick
+  - printf "\n" | pecl install imagick
 install:
    - composer require --dev
