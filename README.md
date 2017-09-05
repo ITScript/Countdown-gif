@@ -1,8 +1,6 @@
 # Countdown-gif
 Flexible countdown builder, supports svg templating
 
-[![Build Status](https://travis-ci.org/ITScript/Countdown-gif.svg?branch=master)](https://travis-ci.org/ITScript/Countdown-gif)
-
 # Installation
 You can install directly via Composer:
 ```bash
