@@ -39,9 +39,7 @@ class SaveFrameSequenceHandlerTest extends TestCase
 
         $handler->process($sequence);
 
-        $r = (new \Imagick($expected_path))->compareImages((new \Imagick($this->tmpFile)), \Imagick::METRIC_UNDEFINED);
-
-        $this->assertGreaterThanOrEqual(0.9, $r[1]);
+        $this->assertFileEquals($expected_path, $this->tmpFile);
     }
 
     /**
