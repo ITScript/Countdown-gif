@@ -6,6 +6,7 @@
                 font-size: 62.5px;
                 text-anchor: middle;
                 font-weight: 900;
+                font-family: "DejaVu Sans";
             }
         </style>
     </defs>
