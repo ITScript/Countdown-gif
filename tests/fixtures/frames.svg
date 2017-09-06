@@ -9,12 +9,12 @@
             }
         </style>
     </defs>
-    <text id="h1" class="cls-1" x="25" y="72"><tspan x="25">{h1}</tspan></text>
-    <text id="h2" class="cls-1" x="75" y="72"><tspan x="75">{h2}</tspan></text>
+    <text id="h1" class="cls-1" x="25" y="72"><tspan x="25">0</tspan></text>
+    <text id="h2" class="cls-1" x="75" y="72"><tspan x="75">0</tspan></text>
     <text id=":1" class="cls-1" x="124" y="66"><tspan x="124">:</tspan></text>
-    <text id="m1" class="cls-1" x="175" y="72"><tspan x="175">{m1}</tspan></text>
-    <text id="m2" class="cls-1" x="225" y="71"><tspan x="225">{m2}</tspan></text>
+    <text id="m1" class="cls-1" x="175" y="72"><tspan x="175">0</tspan></text>
+    <text id="m2" class="cls-1" x="225" y="71"><tspan x="225">0</tspan></text>
     <text id=":2" class="cls-1" x="275" y="66"><tspan x="275">:</tspan></text>
-    <text id="s1" class="cls-1" x="325" y="72"><tspan x="325">{s1}</tspan></text>
-    <text id="s2" class="cls-1" x="375" y="71"><tspan x="375">{s2}</tspan></text>
+    <text id="s1" class="cls-1" x="325" y="72"><tspan x="325">0</tspan></text>
+    <text id="s2" class="cls-1" x="375" y="71"><tspan x="375">0</tspan></text>
 </svg>

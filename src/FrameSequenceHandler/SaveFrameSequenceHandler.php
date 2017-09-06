@@ -28,10 +28,13 @@ class SaveFrameSequenceHandler implements FrameSequenceHandler
     {
         $gif = new \Imagick();
         $gif->setFormat('gif');
+        $gif->setBackgroundColor('transparent');
 
         foreach ($sequence as $frame) {
             $gifFrame = new \Imagick();
+            $gifFrame->setBackgroundColor('transparent');
             $gifFrame->readImageBlob($frame->getContent());
+            $gifFrame->setImageDispose(\Imagick::DISPOSE_BACKGROUND);
             $gifFrame->setImageDelay(intval($frame->getDuration()) * 100);
 
             $gif->addImage($gifFrame);

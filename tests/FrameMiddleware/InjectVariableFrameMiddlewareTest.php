@@ -28,7 +28,7 @@ class InjectVariableFrameMiddlewareTest extends TestCase
      */
     public function testInvoke()
     {
-        $frame      = new FrameInstance(file_get_contents(__DIR__ . '/../fixtures/template.svg'), 45296.0, 1.0);
+        $frame      = new FrameInstance(file_get_contents(__DIR__ . '/../fixtures/frame_template.svg'), 45296.0, 1.0);
         $middleware = new InjectVariableFrameMiddleware();
 
         $this->assertXmlStringEqualsXmlFile(__DIR__ . '/../fixtures/frame.svg', $middleware($frame)->getContent());

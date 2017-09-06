@@ -7,6 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers SaveFrameSequenceHandler
+ * @uses   DateTimeFrameSequenceBuilder
  */
 class SaveFrameSequenceHandlerTest extends TestCase
 {
@@ -81,12 +82,12 @@ class SaveFrameSequenceHandlerTest extends TestCase
     public function dataProcess()
     {
         $builder = new DateTimeFrameSequenceBuilder(
-            file_get_contents(__DIR__ . '/../fixtures/countdown.svg'),
+            file_get_contents(__DIR__ . '/../fixtures/frames.svg'),
             new \DateTime('1970-01-01 12:34:56'),
             new \DateTime('1970-01-02 00:00:00'),
             10
         );
 
-        yield [$builder->getSequence(), __DIR__ . '/../fixtures/countdown.gif'];
+        yield [$builder->getSequence(), __DIR__ . '/../fixtures/frames.gif'];
     }
 }

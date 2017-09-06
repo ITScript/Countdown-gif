@@ -16,6 +16,7 @@ class SvgToGifFrameMiddleware implements FrameMiddleware
     public function __invoke(Frame $frame, callable $next = null)
     {
         $gif = new \Imagick();
+        $gif->setBackgroundColor('transparent');
         $gif->readImageBlob($frame->getContent());
         $gif->setFormat('gif');
 

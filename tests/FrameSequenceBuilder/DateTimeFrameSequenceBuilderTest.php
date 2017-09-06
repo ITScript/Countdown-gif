@@ -64,7 +64,7 @@ class DateTimeFrameSequenceBuilderTest extends TestCase
      */
     public function dataConstructor()
     {
-        $template = \file_get_contents(__DIR__ . '/../fixtures/countdown.svg');
+        $template = \file_get_contents(__DIR__ . '/../fixtures/frames.svg');
 
         yield [
             $template,
