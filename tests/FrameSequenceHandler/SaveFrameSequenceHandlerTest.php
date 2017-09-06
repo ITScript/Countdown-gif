@@ -40,7 +40,15 @@ class SaveFrameSequenceHandlerTest extends TestCase
 
         $handler->process($sequence);
 
-        $this->assertFileEquals($expected_path, $this->tmpFile);
+        $assertedImagick = new \Imagick($expected_path);
+        $assertedImagick->resetIterator();
+        $assertedImagick = $assertedImagick->appendImages(true);
+        $testImagick = new \Imagick($this->tmpFile);
+        $testImagick->resetIterator();
+        $testImagick = $testImagick->appendImages(true);
+
+        $diff = $assertedImagick->compareImages($testImagick, 1);
+        $this->assertSame(0.0, $diff[1]);
     }
 
     /**

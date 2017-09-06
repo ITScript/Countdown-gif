@@ -11,6 +11,9 @@ use PHPUnit\Framework\TestCase;
  */
 class SvgToGifFrameMiddlewareTest extends TestCase
 {
+    /**
+     * @return void
+     */
     public function testInvoke()
     {
         $frame = new FrameInstance(file_get_contents(__DIR__ . '/../fixtures/frame.svg'), 45296.0, 1.0);
@@ -19,6 +22,15 @@ class SvgToGifFrameMiddlewareTest extends TestCase
 
         $frame = $middleware($frame);
 
-        $this->assertStringEqualsFile(__DIR__ . '/../fixtures/frame.gif', $frame->getContent());
+        $assertedImagick = new \Imagick(__DIR__ . '/../fixtures/frame.gif');
+        $assertedImagick->resetIterator();
+        $assertedImagick = $assertedImagick->appendImages(true);
+        $testImagick = new \Imagick();
+        $testImagick->readImageBlob($frame->getContent());
+        $testImagick->resetIterator();
+        $testImagick = $testImagick->appendImages(true);
+
+        $diff = $assertedImagick->compareImages($testImagick, 1);
+        $this->assertSame(0.0, $diff[1]);
     }
 }

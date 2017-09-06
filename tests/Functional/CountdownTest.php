@@ -43,7 +43,15 @@ class CountdownTest extends TestCase
         $handler = new \ITS\Countdown\GIF\FrameSequenceHandler\SaveFrameSequenceHandler($this->tmpFile);
         $handler->process($sequence->getSequence());
 
-        $this->assertFileEquals(__DIR__ . '/../fixtures/countdown.gif', $this->tmpFile);
+        $assertedImagick = new \Imagick(__DIR__ . '/../fixtures/countdown.gif');
+        $assertedImagick->resetIterator();
+        $assertedImagick = $assertedImagick->appendImages(true);
+        $testImagick = new \Imagick($this->tmpFile);
+        $testImagick->resetIterator();
+        $testImagick = $testImagick->appendImages(true);
+
+        $diff = $assertedImagick->compareImages($testImagick, 1);
+        $this->assertSame(0.0, $diff[1]);
     }
 
     /**
