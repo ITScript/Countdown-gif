@@ -27,11 +27,13 @@ class SaveFrameSequenceHandler implements FrameSequenceHandler
     public function process(\Iterator $sequence)
     {
         $gif = new \Imagick();
+        $gif->setResourceLimit(\Imagick::RESOURCETYPE_THREAD, 1);
         $gif->setFormat('gif');
         $gif->setBackgroundColor('transparent');
 
         foreach ($sequence as $frame) {
             $gifFrame = new \Imagick();
+            $gifFrame->setResourceLimit(\Imagick::RESOURCETYPE_THREAD, 1);
             $gifFrame->setBackgroundColor('transparent');
             $gifFrame->readImageBlob($frame->getContent());
             $gifFrame->setImageDispose(\Imagick::DISPOSE_BACKGROUND);
